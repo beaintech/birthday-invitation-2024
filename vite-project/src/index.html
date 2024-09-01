@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bea Blome - the Digital Player</title>
+    <link href="https://fonts.googleapis.com/css?family=Hammersmith+One|Unlock&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css" type="text/css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link href="img/profilecartoon2.jpg" rel="shortcut icon" type="image/x-icon">
+</head>
+
+<body>
+    <a href="#" id="return-to-top"><i class="icon-chevron-up"></i></a>
+
+    <header id="headerBigSize">
+        <div class="logo">
+            <a href="">
+                <img src="./img/profilecartoon2.jpg" alt="" id="logo-img">
+                <div class="logo-text">Beatrix Blome</div>
+            </a>
+        </div>
+
+        <nav id="backlink">
+            <ul id="backlinkUl">
+                <li id="backlinkExp"><a href="#experience">Career</a></li>
+                <li id="backlinkPro"><a href="#project">Projects</a></li>
+                <li id="backlinkCon"><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <header id="headerSmallSize">
+        <div class="logoSmallSize">
+            <img src="./img/profilecartoon2.jpg" alt="" id="logo-img-small">
+            <div class="logo-text-small">Beatrix Blome</div>
+        </div>
+
+        <nav id="backlinkSmall">
+            <ul id="backlinkUlSmall">
+                <li id="backlinkExp"><a href="#experience">Career</a></li>
+                <li id="backlinkPro"><a href="#project">Projects</a></li>
+                <li id="backlinkCon"><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="intro">
+        <article class="profile1">
+            <img src="./img/topimg3.gif" class="workhardImg" />
+            <div class="workhard">
+                <h2>Play Hard</h2>
+                <h5>{ Yoga }<br>{ Hiking }<br>{ Outdoors }</h5>
+            </div>
+        </article>
+
+        <article class="profile2">
+            <div class="playhard">
+                <h2>Work Hard</h2>
+                <h5>{ E-commerce }<br>{ Online Marketing }<br>{ Web/App Programming }</h5>
+            </div>
+            <img src="./img/topimg4.gif" class="playhardImg" />
+        </article>
+    </section>
+
+    <section class="profilecartoon">
+        <img src="img/cartoonbody.png" class="profilecartoonimg">
+        <img src="img/profilepic.jpg" class="profilepic">
+        <div id="introLine"></div>
+        <section id="personalstatement">
+            <h2>Hey, I'm Bea!</h2>
+            <h2>I'm a creative, self-motivated { digital player }</h2>
+            <h2>I have worked in online and digital marketing for over { 5 } years</h2>
+            <h2>Now I'm passionate about being a { developer } for about { 2 } years in Germany</h2>
+            <h2>and I'm into creating digital { products }, development { experience }, and online { solutions }</h2>
+        </section>
+    </section>
+
+    <footer>
+        <h3>Mengyuan Yu | Bea Blome </h3>
+    </footer>
+
+    <script>
+        // Improved and compiled JavaScript from TypeScript
+        document.addEventListener('DOMContentLoaded', () => {
+
+            function headerMove() {
+                const scrollPosition = window.pageYOffset;
+                const navClass = document.querySelector('.logo');
+                if (navClass) {
+                    if (scrollPosition > 15 && navClass.className === 'logo') {
+                        navClass.classList.add('toggleMenu');
+                    } else if (scrollPosition < 15 && navClass.className === 'logo toggleMenu') {
+                        navClass.classList.remove('toggleMenu');
+                    }
+                }
+            }
+
+            function scrollFunction() {
+                const logoImg = document.getElementById('logo-img');
+                const logoText = document.querySelector('.logo-text');
+                const backlinkExp = document.getElementById('backlinkExp');
+                const backlinkPro = document.getElementById('backlinkPro');
+                const backlinkCon = document.getElementById('backlinkCon');
+                const header = document.querySelector('header');
+
+                if (window.pageYOffset > 10) {
+                    if (logoImg) {
+                        logoImg.style.width = '60px';
+                        logoImg.style.marginTop = '0%';
+                        logoImg.style.marginBottom = '0%';
+                        logoImg.style.transition = 'all 1s ease-in-out';
+                    }
+                    if (logoText) {
+                        logoText.style.width = '100%';
+                        logoText.style.fontSize = '30px';
+                        logoText.style.transition = 'all 1s ease-in-out';
+                    }
+                    if (backlinkExp) backlinkExp.style.fontSize = '22px';
+                    if (backlinkPro) backlinkPro.style.fontSize = '22px';
+                    if (backlinkCon) backlinkCon.style.fontSize = '22px';
+
+                    if (header) {
+                        header.style.height = '70px';
+                        header.style.background = 'rgba(250, 250, 250, 0.9)';
+                        header.style.transition = 'all 1s ease-in-out';
+                    }
+                } else if (window.pageYOffset < 200) {
+                    if (logoImg) {
+                        logoImg.style.width = '100px';
+                        logoImg.style.marginBottom = '40%';
+                        logoImg.style.marginTop = '40%';
+                    }
+                    if (logoText) {
+                        logoText.style.fontSize = '100px';
+                        logoText.style.width = '35%';
+                        logoText.style.justifyContent = 'center';
+                    }
+                    if (backlinkExp) backlinkExp.style.fontSize = '20px';
+                    if (backlinkPro) backlinkPro.style.fontSize = '20px';
+                    if (backlinkCon) backlinkCon.style.fontSize = '20px';
+
+                    if (header) {
+                        header.style.height = '100vh';
+                        header.style.background = 'rgba(250, 250, 250)';
+                        header.style.transition = 'all 1s ease-in-out';
+                    }
+                }
+            }
+
+            window.addEventListener('scroll', scrollFunction);
+
+            const arrWasatea = document.getElementById('wasaIntro')?.children;
+            if (arrWasatea) {
+                Array.from(arrWasatea).forEach((element) => {
+                    const el = element as HTMLElement;
+                    el.style.opacity = '0';
+                    el.style.transform = 'rotateZ(45deg)';
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
